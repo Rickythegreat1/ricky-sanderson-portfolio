@@ -1,0 +1,16 @@
+# Asset sources and use notes
+
+These notes cover only the files included in this portfolio. Publication permission for Crossroads materials applies to Ricky Sanderson’s portfolio; all other contributor and third-party rights remain with their owners. This is not a general stock or open license.
+
+| Local file | Source and description | Presentation and attribution |
+|---|---|---|
+| `assets/crossroads-workshop-2018.webp` | Original Crossroads team workshop photograph from 2018. Full composition retained; resized to 1600 px and re-encoded as WebP with source metadata removed. | Published with permission for Ricky Sanderson’s portfolio. Original team artifact; third-party rights retained. Presented with a team-context caption; no individuals are identified. |
+| `assets/crossroads-scheduling-sketch-2018.webp` | Original Crossroads scheduling-interface whiteboard sketch from 2018. Resized to 1600 px and re-encoded as WebP with source metadata removed. | Published with permission for Ricky Sanderson’s portfolio. Original team artifact; third-party rights retained. Presented as a team working sketch, not sole-authored work. |
+| `assets/search-to-canvas.webm`, `assets/search-to-canvas.mp4`, `assets/search-to-canvas-poster.webp` | Format derivatives and a still frame from the original 2017 “Search to canvas” interaction-study GIF. Video files are silent; the original GIF is not distributed. | Published with permission for Ricky Sanderson’s portfolio. Original team interaction study; third-party rights retained. Labeled as a study and playable only by visitor action. |
+| Selected excerpt in `work/crossroads.html` | Selected transcription of four definitions and a condensed tutor flow from the 2018 Nexus working notes. The source export is not included. | Published with permission for Ricky Sanderson’s portfolio. Original team working notes; third-party rights retained. The page identifies this as a selected transcription. |
+| `assets/pcx-prototype-home.webp` | Captured from the public PCx demo: <https://loftylabz.com/demos/pcx-career-path/> (checked 2026-10-30); resized and re-encoded with source metadata removed. | Original frontend-prototype view. Clearly labeled as mock data; the prototype has no backend. |
+| `assets/pcx-ranked.svg` | <https://loftylabz.com/static/assets/cases/pcx-career-path/generated/home-ranked.svg?v=2> | Public interface reconstruction, presented as such and labeled as mock data. |
+| `assets/pcx-verification.svg` | <https://loftylabz.com/static/assets/cases/pcx-career-path/generated/verify-queue.svg?v=2> | Public interface reconstruction, presented as such and labeled as mock data. |
+| `assets/pcx-builder.svg` | <https://loftylabz.com/static/assets/cases/pcx-career-path/generated/builder-reorder.svg?v=2> | Public interface reconstruction, presented as such and labeled as mock data. |
+
+The portfolio uses system fonts and inline SVG arrows. It loads no external fonts, stock imagery, or JavaScript libraries.
