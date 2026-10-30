@@ -404,10 +404,11 @@ ul { margin: 0; padding: 0; }
   object-fit: contain;
 }
 
-.crossroads-workshop-image {
+.crossroads-task-image,
+.crossroads-team-workshop-image {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .project-figure figcaption,
@@ -691,7 +692,7 @@ ul { margin: 0; padding: 0; }
   line-height: 1.5;
 }
 
-.fullsize-sketch-link {
+.fullsize-image-link {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
