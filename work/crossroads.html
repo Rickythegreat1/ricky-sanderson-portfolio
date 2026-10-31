@@ -3,37 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#F5F3EE">
+    <meta name="theme-color" content="#111212">
     <meta name="description" content="Research and interface work for learning environments, Element and Nexus, by Ricky Sanderson.">
     <title>Crossroads Education — Ricky Sanderson</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script src="../script.js" defer></script>
-  </head>
+    <link rel="stylesheet" href="../case-base.css">
+    <script src="../case.js" defer></script>
+    <link rel="stylesheet" href="../case-theme.css">
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="page-frame">
-      <header class="masthead">
-        <a class="identity" href="../index.html" aria-label="Ricky Sanderson — home">
-          <span class="identity-name">Ricky Sanderson</span>
-          <span class="identity-role">Product &amp; UX designer</span>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a class="nav-link" href="../index.html#work">Work</a>
-          <a class="nav-link" href="../index.html#about">About</a>
-          <a class="nav-link nav-contact" href="mailto:rickymsanderson@gmail.com">Get in touch <svg class="arrow-icon arrow-ne" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M7 6h11v11"/></svg></a>
-        </nav>
-      </header>
+      <header class="masthead"><a class="identity" href="../index.html" aria-label="Ricky Sanderson — home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">Product &amp; UX designer</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="../index.html#work">Work <span class="work-count">03</span></a></nav></header>
 
       <main id="main" class="case-page">
         <a class="back-link" href="../index.html#work"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg> Selected work</a>
         <header class="case-header">
           <p class="case-kicker">01 <span>/</span> Crossroads Education</p>
-          <h1>Research for<br>learning tools<span class="period">.</span></h1>
-          <p class="case-deck">Research and interface work for learning environments, Element and Nexus.</p>
+          <h1>A staff-led<br>check-in workflow</h1>
+          <p class="case-deck">A team redesign of attendance in Element, a Crossroads Education learning-center platform.</p>
           <dl class="case-meta">
             <div><dt>Role</dt><dd>Junior UX designer</dd></div>
             <div><dt>Context</dt><dd>Team project</dd></div>
-            <div><dt>Period</dt><dd>2017–2020</dd></div>
+            <div><dt>Products</dt><dd>Element &amp; Nexus</dd></div>
             <div><dt>Focus</dt><dd>Research <span aria-hidden="true">·</span> IA <span aria-hidden="true">·</span> Interaction</dd></div>
           </dl>
         </header>
@@ -41,20 +32,36 @@
         <section class="case-row case-intro" aria-label="Project context">
           <p class="case-label">My role</p>
           <div class="case-prose">
-            <p class="lead-paragraph">At Crossroads Education, I worked on a UX team supporting Element and Nexus. My contribution included research, information architecture, user flows and interface choreography, alongside a lead UX designer.</p>
+            <p class="lead-paragraph">I worked with the lead UX designer and CTO across Element and Nexus. My contribution covered interviews, research, UI-system work and interaction design. I maintained the Adobe XD design library and used UI testing scripts; I did not implement the application code.</p>
           </div>
         </section>
 
         <section class="case-row">
-          <h2 class="case-label">Observe the tutoring center.</h2>
+          <h2 class="case-label">Observe individual check-in.</h2>
           <div class="case-prose">
-            <p>I observed tutoring-center sign-in, seating and student interaction. The research also included stakeholder interviews, surveys, focus groups and competitor research.</p>
+            <p>Individual check-in was slow. Some children did not know how to spell their names or recall their student ID numbers. The Learning Center Director was already signing students in one at a time.</p>
           </div>
         </section>
 
+        <section class="case-row" id="attendance-decision">
+          <h2 class="case-label">Work within the school’s constraints.</h2>
+          <div class="case-prose"><p>Student information could not be openly exposed. Connecting to the school attendance system would have required network/API access the school was not comfortable granting.</p></div>
+        </section>
+        <section class="case-row">
+          <h2 class="case-label">Move attendance to the director.</h2>
+          <div class="case-prose"><p class="lead-paragraph">We created a separate attendance screen for the director, moving to a staff-led bulk sign-in flow.</p><p>This was a team decision and implementation, informed by observation and stakeholder interviews.</p></div>
+        </section>
+        <section class="case-row" id="feedback">
+          <h2 class="case-label">Keep staff feedback in the process.</h2>
+          <div class="case-prose"><p>Staff responded positively to the bulk sign-in change. Interviews and weekly meetings with Learning Center Directors kept day-to-day issues, rollout plans and feedback in the design process.</p><p class="evidence-boundary">Qualitative staff feedback; no measured before/after timing is claimed.</p></div>
+        </section>
+        <section class="case-row" id="artifacts">
+          <h2 class="case-label">Surviving project artifacts.</h2>
+          <div class="case-prose"><p>The artifacts below show the broader Element and Nexus work—not the final attendance screen.</p></div>
+        </section>
         <figure class="case-feature-figure">
           <img class="crossroads-team-workshop-image" src="../assets/crossroads-team-workshop-2018.webp" width="1600" height="1069" alt="The Crossroads team working together around grouped task notes on a table." loading="lazy">
-          <figcaption>Crossroads team workshop <span aria-hidden="true">·</span> 2018</figcaption>
+          <figcaption>Crossroads team workshop</figcaption>
         </figure>
 
         <section class="case-row" id="structure">
@@ -66,7 +73,7 @@
 
         <figure class="case-feature-figure">
           <img class="crossroads-sketch-image" src="../assets/crossroads-scheduling-sketch-2018.webp" width="1600" height="1069" alt="Scheduling-interface sketch on a whiteboard, showing a time grid with hours, notes and supporting controls." loading="lazy">
-          <figcaption>Scheduling-interface sketch <span aria-hidden="true">·</span> Crossroads Education <span aria-hidden="true">·</span> 2018<br>Original team sketch of the schedule grid and supporting controls.<br><a class="fullsize-image-link" href="../assets/crossroads-scheduling-sketch-2018.webp" target="_blank" rel="noopener noreferrer">View the full-size sketch</a></figcaption>
+          <figcaption>Scheduling-interface sketch <span aria-hidden="true">·</span> Crossroads Education<br>Original team sketch of the schedule grid and supporting controls.<br><a class="fullsize-image-link" href="../assets/crossroads-scheduling-sketch-2018.webp" target="_blank" rel="noopener noreferrer">View the full-size sketch</a></figcaption>
         </figure>
 
         <section class="case-row case-gallery-row" aria-labelledby="gallery-title">
@@ -83,12 +90,12 @@
                 <section class="gallery-panel" id="task-group-panel" data-panel>
                   <figure class="gallery-figure">
                     <img class="crossroads-task-image" src="../assets/crossroads-task-groups-2018.webp" width="1600" height="1069" alt="Yellow task notes arranged in groups beneath pink category notes on a workshop table." loading="lazy">
-                    <figcaption>Original task grouping <span aria-hidden="true">·</span> Crossroads Education <span aria-hidden="true">·</span> 2018<br>Tasks for staff information, hours and scheduling, grouped during the workshop.<br><a class="fullsize-image-link" href="../assets/crossroads-task-groups-2018.webp" target="_blank" rel="noopener noreferrer">View the full-size task grouping</a></figcaption>
+                    <figcaption>Original task grouping <span aria-hidden="true">·</span> Crossroads Education<br>Tasks for staff information, hours and scheduling, grouped during the workshop.<br><a class="fullsize-image-link" href="../assets/crossroads-task-groups-2018.webp" target="_blank" rel="noopener noreferrer">View the full-size task grouping</a></figcaption>
                   </figure>
                 </section>
                 <section class="gallery-panel" id="notes-panel" data-panel>
                   <div class="notes-excerpt">
-                    <p class="notes-source">From the Nexus working notes <span aria-hidden="true">·</span> 2018 <span aria-hidden="true">·</span> Selected transcription</p>
+                    <p class="notes-source">From the Nexus working notes <span aria-hidden="true">·</span> Selected transcription</p>
                     <p class="notes-intro">The Nexus notes use notebooks to give people a familiar place to keep their work, control permissions and return to it later. The outline then works through search, version history and the handoff between student and tutor.</p>
                     <dl class="notes-list">
                       <div><dt>Shelf</dt><dd>A group of Notebooks.</dd></div>
@@ -108,7 +115,7 @@
                       <source src="../assets/search-to-canvas.mp4" type="video/mp4">
                       <p>Your browser cannot play embedded video. <a href="../assets/search-to-canvas.mp4">Download the interaction study (MP4)</a>.</p>
                     </video>
-                    <figcaption>Nexus search-to-canvas interaction study <span aria-hidden="true">·</span> 2017</figcaption>
+                    <figcaption>Nexus search-to-canvas interaction study</figcaption>
                   </figure>
                   <p class="gallery-note">An original interaction study showing a search of the tutoring knowledge base.</p>
                 </section>
@@ -130,10 +137,7 @@
         </nav>
       </main>
 
-      <footer class="site-footer">
-        <a class="footer-name" href="../index.html">Ricky Sanderson</a>
-        <p>Product &amp; UX design</p>
-      </footer>
+      <footer class="recruiter-footer"><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
     </div>
   </body>
 </html>

@@ -1,0 +1,24 @@
+/* Astra: additive case theme. Retained case-base.css and case.js stay intact. */
+@font-face{font-family:"Ink Sans";src:url("./assets/NimbusSans-Regular.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Ink Sans";src:url("./assets/NimbusSans-Bold.otf") format("opentype");font-weight:700;font-display:swap}
+:root{color-scheme:dark;--paper:#111212;--surface:#1b1c1d;--ink:#f2f1ee;--muted:#aaa9a7;--rule:#343437;--pink:#ff479b;--pink-dark:#ff479b;--pink-wash:#2b1822;--focus:#ff479b;--page-max:1380px;--gutter:30px}
+body{font-family:"Ink Sans",Arial,sans-serif;font-size:16px;line-height:1.6}
+.masthead{min-height:78px;padding:14px 0;gap:24px}
+.identity-name{font-size:24px;line-height:1.1;font-weight:700;letter-spacing:-.035em}
+.identity-role{font-family:inherit;font-size:13px;line-height:1.2;margin-top:2px}
+.main-nav{gap:28px;font-weight:400}.main-nav .work-count{color:var(--pink);font-weight:700;margin-left:6px}
+.case-header{padding:28px 0 40px}.case-header h1{font-size:56px;font-weight:700;line-height:1.04;max-width:24ch;letter-spacing:-.045em}
+.case-deck{font-size:18px;line-height:1.5;max-width:64ch;margin-top:20px;color:var(--muted)}
+.case-meta{margin-top:28px;padding-top:16px}.case-meta dd{font-size:14px}.case-kicker{margin-bottom:16px}
+.case-kicker,.case-label,.case-meta dt,.eyebrow,.row-index,.gallery-note,.gallery-figure figcaption,.case-feature-figure figcaption,.notes-source,.viewer-caption,.omni-note,.omni-contents,.omni-flow span,.omni-hero figcaption,.omni-screen figcaption,.omni-mobile figcaption{font-family:inherit;letter-spacing:0;text-transform:none}
+.case-row{padding-block:36px}.case-row>.case-label{font-family:inherit;font-size:21px;font-weight:700;line-height:1.3;max-width:22ch}.case-prose>p{font-size:16px;line-height:1.65;max-width:66ch}.case-prose .lead-paragraph{font-size:18px;line-height:1.55}.case-prose>p+p{margin-top:16px}
+.case-prose .evidence-boundary{color:var(--muted);font-size:14px}
+.case-feature-figure{padding:24px 0 36px}.case-feature-figure img{max-width:1040px;width:100%;height:auto}.case-feature-figure figcaption,.gallery-figure figcaption{font-size:13px;line-height:1.5}
+.case-next{padding-block:36px}.case-next a{font-size:32px;line-height:1.1;font-weight:700}.back-to-work{font-size:14px}
+.omni-hero{padding:0;background:transparent;border-top:0;max-width:1040px}.omni-hero figcaption{font-size:13px}.omni-chapter{padding:48px 0 36px;border-color:var(--rule)}
+.section-heading h2{font-size:34px;line-height:1.12;font-weight:700;letter-spacing:-.035em}.omni-contents{font-size:14px;padding:18px 0}.omni-flow strong,.omni-principles strong,.omni-decisions h3{font-weight:700}.omni-decisions p,.omni-evidence-list dd{font-size:16px}
+.decision-evidence{max-width:66ch}.decision-evidence>div{padding:14px 0;border-top:1px solid var(--rule)}.decision-evidence dt{font-size:14px;font-weight:700;color:var(--pink);margin-bottom:6px}.decision-evidence dd{margin:0;font-size:16px;line-height:1.6}
+.recruiter-footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--rule);margin-top:40px;padding:18px 0;color:var(--muted);font-size:14px}.recruiter-footer a{display:inline-flex;align-items:center;min-height:44px;gap:6px;overflow-wrap:anywhere}.recruiter-footer a:hover{color:var(--pink)}.recruiter-footer span[aria-hidden]{color:var(--pink)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.image-viewer button{background:var(--surface);color:var(--ink)}.image-viewer::backdrop{background:rgba(0,0,0,.78)}.viewer-caption{font-size:13px}
+@media(max-width:760px){:root{--gutter:18px}.masthead{min-height:70px;padding:10px 0;gap:12px}.identity-name{font-size:19px}.identity-role{font-size:12px}.main-nav{gap:12px;font-size:13px}.case-header{padding:20px 0 28px}.case-header h1{font-size:38px;line-height:1.06}.case-deck{font-size:17px;margin-top:16px}.case-meta{margin-top:22px}.case-row{padding-block:28px;row-gap:14px}.case-row>.case-label{font-size:20px;max-width:none}.case-prose .lead-paragraph{font-size:17px}.case-feature-figure{padding:18px 0 28px}.omni-chapter{padding:36px 0 28px}.section-heading h2{font-size:28px}.omni-hero{padding:0}.omni-contents{gap:4px 18px}.case-next a{font-size:28px}.recruiter-footer{margin-top:28px;gap:4px 20px}}
