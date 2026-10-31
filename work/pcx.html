@@ -6,14 +6,14 @@
     <meta name="theme-color" content="#111212">
     <meta name="description" content="A real-estate career-path frontend prototype by Ricky Sanderson. Mock data; no backend.">
     <title>PCx Career Path | Ricky Sanderson</title>
-    <link rel="stylesheet" href="../case-base.css">
-    <script src="../case.js" defer></script>
-    <link rel="stylesheet" href="../case-theme.css">
+    <link rel="stylesheet" href="../case-base.css?v=readiness-20261031">
+    <script src="../case.js?v=readiness-20261031" defer></script>
+    <link rel="stylesheet" href="../case-theme.css?v=readiness-20261031">
 </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="page-frame">
-      <header class="masthead"><a class="identity" href="../index.html" aria-label="Ricky Sanderson, home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">Product &amp; UX designer</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="../index.html#work">Work <span class="work-count">03</span></a></nav></header>
+      <header class="masthead"><a class="identity" href="../index.html" aria-label="Ricky Sanderson, home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">Product &amp; UX designer</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-resume" href="../assets/ricky-sanderson-resume.pdf">Résumé <small>PDF</small></a><a class="nav-link" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="../index.html#work">Work <span class="work-count">03</span></a></nav></header>
 
       <main id="main" class="case-page">
         <a class="back-link" href="../index.html#work"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7 7-7-7 7-7"/></svg> Selected work</a>
@@ -39,14 +39,15 @@
         <section class="case-row">
           <h2 class="case-label">Resolve conflicting requirements.</h2>
           <div class="case-prose">
-            <p>The brief used different stage names and completion rules in different places. It also treated “Productive Agent” as both a career stage and a production level. I documented those conflicts separately from the design proposals.</p>
+            <p>The brief used different stage names and completion rules in different places. It also treated “Productive Agent” as both a career stage and a production level.</p>
+            <p>I used the founder’s most recent dated direction to resolve conflicts rather than combining incompatible versions. The proposed path follows four stages: Getting Set Up, Fundamentals, Mastery Skills and Wealth Building. Questions that still required the founder’s decision stayed open; mechanisms not specified in the sources stayed labeled as proposals.</p>
           </div>
         </section>
 
         <section class="case-row">
           <h2 class="case-label">Explain task ranking.</h2>
           <div class="case-prose">
-            <p>The daily view puts urgency before priority. In the demo, an overdue medium-priority task appears ahead of high-priority work due today. “Why is this first?” explains the rule in place.</p>
+            <p>The founder wanted the home screen to answer “What should I do today?” My proposed daily view puts urgency before priority, so due work does not get buried by a priority label alone. In the demo, an overdue medium-priority task appears ahead of high-priority work due today. “Why is this first?” explains the rule in place.</p>
           </div>
         </section>
 
@@ -63,24 +64,24 @@
               <div class="gallery-panels">
               <section class="gallery-panel" id="agent-panel" data-panel>
                 <figure class="gallery-figure">
-                  <img src="../assets/pcx-prototype-home.webp" width="1165" height="747" alt="Original PCx frontend prototype: ranked agent tasks, career stage and learning focus. Mock data; no backend." loading="lazy">
+                  <a class="screenshot-link" data-screenshot href="../assets/pcx-prototype-home.webp" target="_blank" rel="noopener" aria-label="Inspect this PCx view at full size"><img src="../assets/pcx-prototype-home.webp" width="1165" height="747" alt="Original PCx frontend prototype: ranked agent tasks, career stage and learning focus. Mock data; no backend." loading="lazy"></a>
                   <figcaption>Original agent-day prototype <span aria-hidden="true">·</span> Mock data<br>Overdue tasks appear first. “Why is this first?” explains the order. The agent’s career stage stays beside the task list.</figcaption>
                 </figure>
               </section>
               <section class="gallery-panel" id="verify-panel" data-panel>
                 <figure class="gallery-figure">
-                  <img src="../assets/pcx-verification.svg" width="720" height="480" alt="Redrawn case-study view of the leader verification queue." loading="lazy">
+                  <a class="screenshot-link" data-screenshot href="../assets/pcx-verification.svg" target="_blank" rel="noopener" aria-label="Inspect this PCx view at full size"><img src="../assets/pcx-verification.svg" width="720" height="480" alt="Redrawn case-study view of the leader verification queue." loading="lazy"></a>
                   <figcaption>Reconstructed verification view <span aria-hidden="true">·</span> A queue for leaders to review submitted work.</figcaption>
                 </figure>
               </section>
               <section class="gallery-panel" id="builder-panel" data-panel>
                 <figure class="gallery-figure">
-                  <img src="../assets/pcx-builder.svg" width="720" height="480" alt="Redrawn case-study view of the career path builder with versioning represented in the prototype." loading="lazy">
+                  <a class="screenshot-link" data-screenshot href="../assets/pcx-builder.svg" target="_blank" rel="noopener" aria-label="Inspect this PCx view at full size"><img src="../assets/pcx-builder.svg" width="720" height="480" alt="Redrawn case-study view of the career path builder with versioning represented in the prototype." loading="lazy"></a>
                   <figcaption>Reconstructed path-builder view <span aria-hidden="true">·</span> A career-path editor with a version selector.</figcaption>
                 </figure>
               </section>
               </div>
-              <p class="gallery-note">The agent-day screenshot is original. Verification and path-builder views are reconstructions. All use mock data.</p>
+              <p class="gallery-note">The agent-day screenshot is original. Verification and path-builder views are reconstructions. All use mock data. Select an image to zoom in.</p>
             </div>
           </div>
         </section>
@@ -94,7 +95,7 @@
         <a class="back-to-work" href="../index.html#work">Back to selected work <svg class="arrow-icon arrow-up" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></a>
       </main>
 
-      <footer class="recruiter-footer"><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
+      <footer class="recruiter-footer"><a href="../assets/ricky-sanderson-resume.pdf">Résumé (PDF)</a><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
     </div>
   </body>
 </html>

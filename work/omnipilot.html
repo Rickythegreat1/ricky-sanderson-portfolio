@@ -6,46 +6,49 @@
   <meta name="theme-color" content="#111212">
   <meta name="description" content="Taska: Ricky Sanderson’s research and design for reviewing browser and coding tasks before they run. Built with AI assistance.">
   <title>Taska | Ricky Sanderson</title>
-  <link rel="stylesheet" href="../case-base.css">
+  <link rel="stylesheet" href="../case-base.css?v=readiness-20261031">
   <link rel="stylesheet" href="./omnipilot.css">
-  <script src="../case.js" defer></script>
-  <link rel="stylesheet" href="../case-theme.css">
+  <script src="../case.js?v=readiness-20261031" defer></script>
+  <link rel="stylesheet" href="../case-theme.css?v=readiness-20261031">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="page-frame">
-  <header class="masthead"><a class="identity" href="../index.html" aria-label="Ricky Sanderson, home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">Product &amp; UX designer</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="../index.html#work">Work <span class="work-count">03</span></a></nav></header>
+  <header class="masthead"><a class="identity" href="../index.html" aria-label="Ricky Sanderson, home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">Product &amp; UX designer</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-resume" href="../assets/ricky-sanderson-resume.pdf">Résumé <small>PDF</small></a><a class="nav-link" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="../index.html#work">Work <span class="work-count">03</span></a></nav></header>
   <main id="main" class="case-page omnipilot-case">
     <a class="back-link" href="../index.html#work"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg> Selected work</a>
     <header class="case-header">
       <p class="case-kicker">03 <span>/</span> Taska <span>/</span> Independent project</p>
       <h1>Review each step<br>before execution<span class="period">.</span></h1>
-      <p class="case-deck">Taska breaks a request into browser and coding steps for review before execution.</p>
+      <p class="case-deck">For people delegating browser and coding work to an AI assistant. Taska makes the steps, access and stopping point reviewable before a run.</p>
       <dl class="case-meta">
         <div><dt>My role</dt><dd>Research, product architecture<br>&amp; interaction design</dd></div>
         <div><dt>Foundation</dt><dd>Authored research &amp; specifications</dd></div>
         <div><dt>Implementation</dt><dd>AI-assisted development</dd></div>
       </dl>
     </header>
-    <figure class="omni-hero">
-      <a href="../assets/taska/command.webp" target="_blank" rel="noopener" aria-label="Open the full Codex command screenshot"><img src="../assets/taska/command.webp" width="1165" height="963" alt="Taska’s Codex command screen with objective, workspace and sandbox fields beside an explicit runtime connection panel. Installation preview; runtime not connected." fetchpriority="high"></a>
-      <figcaption><span>01 / Codex sub-harness</span> Actual application UI in an installation preview. No connected runtime or model task. Select any screenshot to inspect it at full size.</figcaption>
-    </figure>
-    <nav class="omni-contents" aria-label="Case study sections"><a href="#problem">The problem</a><a href="#workflow">The workflow</a><a href="#control">Control &amp; memory</a><a href="#system">Design system</a></nav>
+    <nav class="omni-contents" aria-label="Case study sections"><a href="#problem">The problem</a><a href="#motion-reference">Try the motion</a><a href="#workflow">The workflow</a><a href="#control">Control &amp; memory</a><a href="#system">Design system</a></nav>
 
     <section class="case-row" id="problem">
-      <h2 class="case-label">Set the task’s scope and stopping point.</h2>
+      <h2 class="case-label">Know what the assistant will do.</h2>
       <div class="case-prose">
-        <p class="lead-paragraph">A request like “review this project” hides several decisions: what the assistant can access, which steps it will take, when it should stop and what counts as done.</p>
-        <p>My browser-assistant research covered task progress, expected-state checks, memory and error recovery. Each task shows its allowed access and next review point.</p>
-        <p>This is an independent project based on my research and specifications.</p>
+        <p class="lead-paragraph">A request like “review this project” leaves the person delegating it with unanswered questions: what can the assistant access, which steps will it take, and when will it stop?</p>
+        <p>I designed the review around those decisions. Users inspect a draft before a run, approve consequential actions individually, and check an interrupted action’s result before retrying.</p>
+        <p>This is an independent project based on my browser-assistant research and specifications. The application screens below show an installation preview, not a connected runtime.</p>
       </div>
     </section>
+    <figure class="omni-hero">
+      <a href="../assets/taska/command.webp" target="_blank" rel="noopener" aria-label="Open the full Codex command screenshot"><img src="../assets/taska/command.webp" width="1165" height="963" alt="Taska’s Codex command screen with objective, workspace and sandbox fields beside an explicit runtime connection panel. Installation preview; runtime not connected." fetchpriority="high"></a>
+      <figcaption><span>01 / Codex sub-harness</span> Actual application UI in an installation preview. No connected runtime or model task. Select a screenshot, then choose 100% or 200% to inspect its details.</figcaption>
+    </figure>
+
+
     <section class="case-row">
-      <h2 class="case-label">Turn the research into requirements.</h2>
+      <h2 class="case-label">Keep approval tied to the action.</h2>
       <div class="case-prose">
-        <p>I compared browser architectures and model choices in the research and product documents. Earlier designs are archived separately.</p>
-        <dl class="decision-evidence"><div><dt>Research gap</dt><dd>The original pseudocode tracked completion but left cancellation, recovery and replay unresolved.</dd></div><div><dt>Interaction requirement</dt><dd>Show uncertain outcomes, block interrupted writes from replaying, and ask for evidence before continuing.</dd></div><div><dt>Recorded test changes</dt><dd>Repairs addressed cancellation races, stale approvals and possible duplicate dispatch.</dd></div></dl>
+        <p>Permission to access a workspace does not approve every action inside it. Taska ties each consequential approval to a specific step and workflow revision. A changed draft needs a new decision.</p>
+        <p>If an interruption makes the result unclear, the interface shows that uncertainty instead of offering a blind retry. This is intended to prevent the same write from being sent twice.</p>
+        <details class="omni-disclosure"><summary>Research and implementation evidence <span aria-hidden="true">+</span></summary><div class="research-detail"><p>I compared browser architectures and model choices in the research and product documents. Earlier designs are archived separately.</p><dl class="decision-evidence"><div><dt>Research gap</dt><dd>The original pseudocode tracked completion but left cancellation, recovery and replay unresolved.</dd></div><div><dt>Interaction requirement</dt><dd>Show uncertain outcomes, block interrupted writes from replaying, and ask for evidence before continuing.</dd></div><div><dt>Recorded test changes</dt><dd>Repairs addressed cancellation races, stale approvals and possible duplicate dispatch.</dd></div></dl></div></details>
       </div>
     </section>
 
@@ -82,7 +85,7 @@
       </div>
       <details class="omni-disclosure"><summary>Inspect the implemented design-system library <span aria-hidden="true">+</span></summary><figure class="omni-screen"><a href="../assets/taska/design-system.webp" target="_blank" rel="noopener" aria-label="Open the full design-system screenshot"><img src="../assets/taska/design-system.webp" width="1165" height="1926" alt="Actual design-system library with twelve named color tokens, typography and spacing specifications, button variants, status badges, fields, a sample permission switch and dialog control." loading="lazy"></a><figcaption><span>06 / Foundations &amp; components</span> Implemented library with labeled sample controls. Archived explorations are preserved separately.</figcaption></figure></details>
       <div class="case-row omni-inner-row"><h3 class="case-label">Handle interrupted transitions.</h3><div class="case-prose"><p>Selection markers move between options. Reordered steps keep their identity. Closing a dialog returns focus immediately; its visual exit finishes separately. Reversing an action continues from the displayed state.</p><p>Try the tabs, screenshot viewer and expandable sections below.</p></div></div>
-      <details class="omni-disclosure motion-reference"><summary>Try the portfolio motion reference <span aria-hidden="true">+</span></summary>
+      <details class="omni-disclosure motion-reference" id="motion-reference" open><summary>Try the portfolio motion reference <span aria-hidden="true">+</span></summary>
         <div class="gallery" data-tabs="portfolio-motion">
           <div class="gallery-tabs" data-tablist aria-label="Portfolio motion examples"><a class="gallery-tab" data-tab href="#motion-selection">01 Selection</a><a class="gallery-tab" data-tab href="#motion-inspection">02 Inspection</a><a class="gallery-tab" data-tab href="#motion-layout">03 Expansion</a><span class="tab-rail" aria-hidden="true"></span></div>
           <div class="gallery-panels">
@@ -99,7 +102,7 @@
     <nav class="case-next case-next-back" aria-label="Previous project"><p class="eyebrow">Previous project</p><a href="./pcx.html"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg> PCx Career Path</a></nav>
     <a class="back-to-work" href="../index.html#work">Back to selected work <svg class="arrow-icon arrow-up" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></a>
   </main>
-  <footer class="recruiter-footer"><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
+  <footer class="recruiter-footer"><a href="../assets/ricky-sanderson-resume.pdf">Résumé (PDF)</a><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
 </div>
 </body>
 </html>

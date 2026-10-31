@@ -113,22 +113,34 @@
   });
 
   // Screenshot inspection stays in context. Native dialog owns focus and modality.
-  const screenshotLinks=[...document.querySelectorAll('.omni-hero>a,.omni-screen>a,.omni-mobile>a')];
+  const screenshotLinks=[...document.querySelectorAll('.omni-hero>a,.omni-screen>a,.omni-mobile>a,[data-screenshot]')];
   if(screenshotLinks.length){
     const dialog=document.createElement('dialog');dialog.className='image-viewer';dialog.setAttribute('aria-labelledby','viewer-title');
-    dialog.innerHTML='<header><h2 id="viewer-title">Application screenshot</h2><button type="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></header><div class="viewer-scroll"><img alt=""></div><p class="viewer-caption"></p>';
-    document.body.append(dialog);const picture=dialog.querySelector('img');const caption=dialog.querySelector('.viewer-caption');let opener=null,departing=null,exitGeneration=0;
+    dialog.innerHTML='<header><h2 id="viewer-title">Image inspection</h2><button type="button" class="viewer-close" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></header><div class="viewer-tools" role="group" aria-label="Image zoom"><button type="button" data-zoom="fit" aria-pressed="true">Fit</button><button type="button" data-zoom="1" aria-pressed="false">100%</button><button type="button" data-zoom="2" aria-pressed="false">200%</button><a class="viewer-original" target="_blank" rel="noopener">Open original <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div><p class="viewer-help" id="viewer-help">Choose 100% or 200%, then scroll to pan. Arrow keys work in the image area.</p><div class="viewer-scroll" tabindex="0" role="region" aria-label="Image area" aria-describedby="viewer-help"><img alt=""></div><p class="viewer-caption"></p>';
+    document.body.append(dialog);
+    const picture=dialog.querySelector('img'), caption=dialog.querySelector('.viewer-caption'), viewport=dialog.querySelector('.viewer-scroll'), closeButton=dialog.querySelector('.viewer-close');
+    const zoomButtons=[...dialog.querySelectorAll('[data-zoom]')];
+    let opener=null,departing=null,exitGeneration=0,zoom='fit',originalWidth=0;
+    function applyZoom(value){
+      zoom=value;
+      zoomButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.zoom===value)));
+      const width=originalWidth||picture.naturalWidth;
+      picture.style.width=value==='fit'?'100%':`${width*Number(value)}px`;
+      viewport.scrollTop=0;viewport.scrollLeft=0;
+    }
+    zoomButtons.forEach(button=>button.addEventListener('click',()=>applyZoom(button.dataset.zoom)));
+    picture.addEventListener('load',()=>applyZoom(zoom));
     function close(){
       if(!dialog.open)return;
       const box=dialog.getBoundingClientRect();const style=getComputedStyle(dialog);const from={opacity:style.opacity,transform:style.transform};
       const ghost=dialog.cloneNode(true);ghost.removeAttribute('open');ghost.removeAttribute('aria-labelledby');ghost.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));ghost.setAttribute('aria-hidden','true');ghost.inert=true;ghost.classList.add('viewer-departing');
       Object.assign(ghost.style,{position:'fixed',left:`${box.left}px`,top:`${box.top}px`,width:`${box.width}px`,height:`${box.height}px`,margin:'0',display:'flex'});
-      ghost.querySelector('.viewer-scroll').scrollTop=dialog.querySelector('.viewer-scroll').scrollTop;
+      ghost.querySelector('.viewer-scroll').scrollTop=viewport.scrollTop;ghost.querySelector('.viewer-scroll').scrollLeft=viewport.scrollLeft;
       departing?.remove();departing=ghost;document.body.append(ghost);
       const generation=++exitGeneration;dialog.close();document.body.classList.remove('viewer-open');opener?.focus({preventScroll:true});
       animate(ghost,from,{opacity:0,transform:'translateY(8px) scale(.985)'},'exit').then(()=>{if(exitGeneration===generation){ghost.remove();departing=null;}});
     }
-    dialog.querySelector('button').addEventListener('click',close);
+    closeButton.addEventListener('click',close);
     dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
     dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)close();}});
     screenshotLinks.forEach(link=>link.addEventListener('click',event=>{
@@ -136,11 +148,20 @@
       event.preventDefault();opener=link;
       const from=departing?{opacity:getComputedStyle(departing).opacity,transform:getComputedStyle(departing).transform}:{opacity:0,transform:'translateY(14px) scale(.985)'};
       ++exitGeneration;departing?.remove();departing=null;
+      originalWidth=Number(link.querySelector('img').getAttribute('width'))||link.querySelector('img').naturalWidth;
       picture.src=link.href;picture.alt=link.querySelector('img').alt;caption.textContent=link.closest('figure').querySelector('figcaption')?.textContent||'';
-      dialog.showModal();document.body.classList.add('viewer-open');dialog.querySelector('button').focus();dialog.querySelector('.viewer-scroll').scrollTop=0;
+      dialog.querySelector('.viewer-original').href=link.href;applyZoom('fit');
+      dialog.showModal();document.body.classList.add('viewer-open');closeButton.focus();
       animate(dialog,from,{opacity:1,transform:'translateY(0) scale(1)'},'dialog');
     }));
   }
+  function revealLinkedMotion(){
+    if(location.hash!=='#motion-reference')return;
+    const target=document.getElementById('motion-reference');
+    if(target){target.open=true;galleries.forEach(measure=>measure());target.scrollIntoView({block:'start'});}
+  }
+  document.querySelectorAll('a[href="#motion-reference"]').forEach(link=>link.addEventListener('click',()=>{const target=document.getElementById('motion-reference');if(target){target.open=true;galleries.forEach(measure=>measure());}}));
+  window.addEventListener('hashchange',revealLinkedMotion);revealLinkedMotion();
   let resizeFrame;
   window.addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>galleries.forEach(measure=>measure()));});
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){stopVideos();[...activeAnimations].forEach(finishAnimation);}});
