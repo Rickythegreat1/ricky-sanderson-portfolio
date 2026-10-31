@@ -355,6 +355,8 @@ button { border-radius: 0; }
 ::view-transition { pointer-events:none; }
 
 /* Project previews are real section controls, not passive tab-like cards. */
-.project-select{display:block;width:100%;min-height:44px;padding:0;border:0;background:none;color:inherit;text-align:left;font:inherit;letter-spacing:inherit;line-height:inherit;cursor:pointer}
-.project-select:hover{color:var(--pink)}
+.project-select,.project-case{display:block;width:100%;min-height:44px;padding:0;border:0;background:none;color:inherit;text-align:left;font:inherit;letter-spacing:inherit;line-height:inherit;cursor:pointer}
+.project-select[hidden],.project-case[hidden]{display:none}
+.project-select:hover,.project-case:hover{color:var(--pink)}
+.project-case:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 .has-js .leaf-head,.has-js .leaf-media,.has-js .leaf-copy{cursor:pointer}

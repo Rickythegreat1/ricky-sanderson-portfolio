@@ -35,7 +35,15 @@
       const id = leaf.dataset.project;
       leaf.classList.toggle("is-selected", id === selectedProject);
       leaf.classList.toggle("is-expanded", id === expandedProject);
-      leaf.querySelector(".project-select")?.setAttribute("aria-expanded", String(id === expandedProject));
+      const titleButton = leaf.querySelector(".project-select");
+      const titleLink = leaf.querySelector(".project-case");
+      const isFocused = id === expandedProject;
+      const activeTitle = document.activeElement === titleButton || document.activeElement === titleLink;
+      titleButton.hidden = isFocused;
+      titleButton.setAttribute("aria-expanded", String(isFocused));
+      titleLink.hidden = !isFocused;
+      // Preserve keyboard focus when the title changes from a selector to a link.
+      if (activeTitle) (isFocused ? titleLink : titleButton).focus({ preventScroll: true });
     });
     grid.dataset.selected = selectedProject;
     grid.dataset.expanded = expandedProject || "";
@@ -169,7 +177,7 @@
   // The whole project preview selects the section; nested controls keep their own action.
   leaves.forEach((leaf) => {
     const id = leaf.dataset.project;
-    leaf.querySelector(".project-select")?.addEventListener("click", () => toggleProject(id));
+    leaf.querySelector(".project-select")?.addEventListener("click", () => openProject(id, { push: true }));
     leaf.addEventListener("click", (event) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const target = event.target;
