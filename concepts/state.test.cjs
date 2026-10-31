@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const {create}=require('./state.js');
+let saved=null; const storage={getItem:()=>saved,setItem:(_,v)=>saved=v};
+let s=create(storage); const present=()=>s.get().filter(r=>r.present).length;
+assert.equal(present(),2);
+assert.throws(()=>s.signIn([],'Research'));
+assert.throws(()=>s.signIn(['01'],'Unknown'));
+assert.throws(()=>s.signIn(['99'],'Research'));
+let before=s.signIn(['01','02'],'Research'); assert.equal(present(),4);
+assert.throws(()=>s.signIn(['01'],'Research'));
+assert.equal(create(storage).get().filter(r=>r.present).length,4);
+s.undo(before);assert.equal(present(),2);
+before=s.signOut('03');assert.equal(present(),1);s.undo(before);assert.equal(present(),2);
+const blocked=create({getItem:()=>null,setItem:()=>{throw Error('Quota');}});
+assert.throws(()=>blocked.signIn(['01'],'Research'));assert.equal(blocked.get()[0].present,false);
+const malformed=create({getItem:()=>'{bad json'});assert.equal(malformed.get().length,8);
+console.log('PASS: validation, batch commit, persistence, sign-out, undo, atomic storage failure, malformed storage.');

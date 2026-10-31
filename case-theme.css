@@ -25,3 +25,12 @@ body{font-family:"Ink Sans",Arial,sans-serif;font-size:16px;line-height:1.6}
 
 /* Three remaining Taska metadata fields, following removal of project status. */
 @media(min-width:761px){.omnipilot-case .case-meta{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Original MAC artifact retains its aspect ratio and native playback controls. */
+.mac-evidence video{max-width:840px}
+
+/* Separate continuous walkthroughs, with direct access to each runnable flow. */
+.interaction-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding:0 0 44px}
+.interaction-clip{min-width:0;margin:0}.interaction-clip video{display:block;width:100%;height:auto;aspect-ratio:1248/970;background:#111416;border:1px solid var(--rule);border-radius:12px}
+.interaction-clip figcaption{display:grid;gap:4px;padding-top:16px;font-size:13px;color:var(--muted);line-height:1.5}.interaction-clip figcaption strong{font-size:18px;color:var(--ink)}.interaction-clip .fullsize-image-link{justify-self:start;display:inline-flex;align-items:center;min-height:44px;margin-top:4px}
+@media(max-width:760px){.interaction-pair{grid-template-columns:1fr;gap:28px;padding-bottom:28px}}
