@@ -20,7 +20,7 @@
 .omni-flow p{font-size:14px;line-height:1.5;color:var(--muted);margin:8px 0 0}
 .omni-note{max-width:90ch;color:var(--muted);font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;margin:16px 0 0}
 .omni-inner-row{border-top:0;padding-top:40px}
-.omni-decisions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:40px}
+.omni-decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-bottom:40px}
 .omni-decisions article{border-top:1px solid var(--rule);padding-top:20px}
 .omni-decisions .eyebrow{display:block;color:var(--pink-dark);margin:0 0 15px}
 .omni-decisions h3{font-size:23px;font-weight:500;line-height:1.15;letter-spacing:-.03em;margin:0 0 14px;max-width:19ch}
