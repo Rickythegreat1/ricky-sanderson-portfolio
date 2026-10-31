@@ -353,3 +353,8 @@ button { border-radius: 0; }
 @keyframes page-leave { to { opacity:0; transform:translateY(-8px); } }
 @keyframes page-arrive { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 ::view-transition { pointer-events:none; }
+
+/* Project previews are real section controls, not passive tab-like cards. */
+.project-select{display:block;width:100%;min-height:44px;padding:0;border:0;background:none;color:inherit;text-align:left;font:inherit;letter-spacing:inherit;line-height:inherit;cursor:pointer}
+.project-select:hover{color:var(--pink)}
+.has-js .leaf-head,.has-js .leaf-media,.has-js .leaf-copy{cursor:pointer}

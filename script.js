@@ -35,6 +35,7 @@
       const id = leaf.dataset.project;
       leaf.classList.toggle("is-selected", id === selectedProject);
       leaf.classList.toggle("is-expanded", id === expandedProject);
+      leaf.querySelector(".project-select")?.setAttribute("aria-expanded", String(id === expandedProject));
     });
     grid.dataset.selected = selectedProject;
     grid.dataset.expanded = expandedProject || "";
@@ -162,6 +163,21 @@
     summary.addEventListener("click", (event) => {
       event.preventDefault();
       toggleProject(item.dataset.project);
+    });
+  });
+
+  // The whole project preview selects the section; nested controls keep their own action.
+  leaves.forEach((leaf) => {
+    const id = leaf.dataset.project;
+    leaf.querySelector(".project-select")?.addEventListener("click", () => toggleProject(id));
+    leaf.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest("a, button, summary, details, input, select, textarea, video, audio")) return;
+      if (!target.closest(".leaf-head, .leaf-media, .leaf-copy")) return;
+      if (window.getSelection()?.toString()) return;
+      toggleProject(id);
     });
   });
 
