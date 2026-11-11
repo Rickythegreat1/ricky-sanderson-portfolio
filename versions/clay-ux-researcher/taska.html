@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111212">
+  <meta name="description" content="Taska: Ricky Sanderson’s research and design for reviewing browser and coding tasks before they run. Built with AI assistance.">
+  <title>Taska | Ricky Sanderson · Clay · Contract UX Researcher</title>
+  <link rel="stylesheet" href="../../case-base.css?v=readiness-20261031">
+  <link rel="stylesheet" href="../../work/omnipilot.css">
+  <script src="../clay-case.js" defer></script>
+  <link rel="stylesheet" href="../../case-theme.css?v=readiness-20261031">
+<link rel="stylesheet" href="../role.css"><link rel="stylesheet" href="../clay.css"><script src="../clay.js" defer></script>
+</head>
+<body class="role-case">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-frame">
+  <header class="masthead"><a class="identity" href="./index.html" aria-label="Ricky Sanderson, home"><span class="identity-name">Ricky Sanderson</span><span class="identity-role">UX research &amp; product design</span></a><nav class="main-nav" aria-label="Main navigation"><a class="nav-resume" href="../../assets/ricky-sanderson-resume.pdf">Résumé <small>PDF</small></a><a class="nav-link contact-pill" href="mailto:rickymsanderson@gmail.com">Contact <span aria-hidden="true">↗</span></a><a class="nav-link" href="./index.html#work">Work <span class="work-count">03</span></a></nav></header><div class="edition-bar"><span>Clay · Contract UX Researcher</span><a href="./index.html#work">Back to selected work ↗</a></div>
+  <main id="main" class="case-page omnipilot-case">
+    <a class="back-link" href="./index.html#work"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg> Selected work</a>
+    <header class="case-header"><div class="case-opening"><div class="case-heading-copy">
+      <p class="case-kicker">03 <span>/</span> Taska <span>/</span> Independent project</p>
+      <h1>Review each step<br>before execution<span class="period">.</span></h1>
+      <p class="case-deck">For people delegating browser and coding work to an AI assistant. Taska makes the steps, access and stopping point reviewable before a run.</p>
+      </div><figure class="decision-preview preview-taska"><p class="preview-kicker">03 / Research → interaction</p><p class="preview-role">Independent research &amp; design</p><div class="preview-stage"><a class="preview-window preview-workflow" href="../../assets/taska/workflow.webp" data-screenshot data-zoom-focus-x="0.4" data-zoom-focus-y="0.86" data-viewer-caption="Installation preview · Runtime not connected. Full source image." aria-label="Inspect the full source image"><img src="../../assets/taska/workflow.webp" width="1165" height="1157" alt="Taska workflow preview with separate Save workflow and Review and run controls." loading="eager"></a></div><figcaption><strong>Review the workflow before a run.</strong><span>Installation preview · Runtime not connected</span></figcaption></figure></div><dl class="case-meta">
+        <div><dt>My role</dt><dd>Research, product architecture<br>&amp; interaction design</dd></div>
+        <div><dt>Foundation</dt><dd>Technical research &amp; specifications</dd></div>
+        <div><dt>Implementation</dt><dd>AI-assisted development</dd></div>
+      </dl>
+    <p class="case-timing">Project dates and duration are not listed.</p></header>
+    <nav class="case-shortcuts case-contents" id="case-sections" tabindex="-1" aria-label="Case study sections"><span class="case-contents-label">Explore this case</span><a href="#research-decisions">Research &amp; decisions</a><a href="#workflow">Workflow</a><a href="#control">Approval &amp; recovery</a><a href="#system">Design system</a><a href="#motion-reference">Portfolio motion reference</a></nav>
+
+    <section class="case-row" id="problem">
+      <h2 class="case-label">Know what the assistant will do.</h2>
+      <div class="case-prose taska-framing"><div><span class="framing-label">The question</span><p>What can the assistant access, which steps will it take, and when will it stop?</p></div><div><span class="framing-label">My design response</span><p>Review a draft before a run. Approve consequential actions individually. Check an interrupted action’s result before retrying.</p></div><p class="framing-scope">Independent browser-assistant research and specifications. Screens show an installation preview, not a connected runtime.</p></div>
+    </section>
+    <details class="omni-disclosure case-depth"><summary><span class="depth-label">Inspect the application preview<small>1 screen</small></span><span aria-hidden="true">+</span></summary><figure class="omni-hero">
+      <a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/command.webp" target="_blank" rel="noopener" aria-label="Open the full Codex command screenshot"><img src="../../assets/taska/command.webp" width="1165" height="963" alt="Taska’s Codex command screen with objective, workspace and sandbox fields beside an explicit runtime connection panel. Installation preview; runtime not connected." fetchpriority="high"></a>
+      <figcaption><span>01 / Codex sub-harness</span> Actual application UI in an installation preview. No connected runtime or model task. Select a screenshot, then choose 100% or 200% to inspect its details.</figcaption>
+    </figure></details>
+
+
+    <section class="case-row">
+      <h2 class="case-label">Keep approval tied to the action.</h2>
+      <div class="case-prose">
+        <p>Permission to access a workspace does not approve every action inside it. Taska ties each one-time approval to a specific step and workflow revision. A changed draft needs a new decision.</p>
+        <p>If an interruption makes the result unclear, the interface shows that uncertainty instead of offering a blind retry. This is intended to prevent the same change from being sent twice.</p><p class="plain-language-example"><strong>For example:</strong> a connection drops just after an assistant submits a change. Did it go through? Check the result before trying again, so the change is not sent twice.</p>
+        <details class="omni-disclosure" id="research-decisions" open><summary>Research and implementation evidence <span aria-hidden="true">+</span></summary><div class="research-detail"><p>I compared browser architectures and model choices in the research and product documents. Earlier designs are archived separately.</p><dl class="decision-evidence"><div><dt>Research gap</dt><dd>The original plan tracked completion, but did not settle what happens when work is canceled, interrupted or tried again.</dd></div><div><dt>Interaction requirement</dt><dd>Show when the result is uncertain. Check whether a change happened before sending the same action again.</dd></div><div><dt>Recorded test changes</dt><dd>Fixes addressed competing cancellation events, approval of outdated drafts and the risk of sending an action twice.</dd></div></dl></div></details>
+      </div>
+    </section>
+
+    <figure class="case-feature-figure editorial-detail" id="recovery-detail"><div class="decision-artifact"><div class="decision-artifact-copy"><p class="artifact-eyebrow">From research to an interaction rule</p><h3>Inspect the result<br>before retrying.</h3><p class="source-quote">“An interrupted write is blocked from replay. Inspect the target and reconcile observed evidence.”</p><p class="quote-source">Visible rule in the interaction-state library.</p></div><a class="screenshot-link recovery-detail-window" data-screenshot data-zoom-focus-x="0.31" data-zoom-focus-y="0.74" data-viewer-caption="Taska interaction-state library. Actual installation-preview UI; runtime not connected. Full screenshot." href="../../assets/taska/interaction-states.webp" aria-label="Inspect the complete interaction-state library"><img src="../../assets/taska/interaction-states.webp" width="1165" height="874" alt="Taska’s Uncertain outcome state says an interrupted write is blocked from replay until the target is inspected and observed evidence reconciled." loading="eager"></a></div><figcaption>03 / Interaction-state library · Original installation-preview UI. This detail shows the recovery rule; select it to inspect all states. Runtime not connected.</figcaption></figure><details class="omni-disclosure case-depth" id="workflow"><summary><span class="depth-label">Explore the five-step workflow<small>5 steps · 1 screen</small></span><span aria-hidden="true">+</span></summary><section class="omni-chapter">
+      <div class="section-heading"><p class="eyebrow">01 / The workflow</p><h2>Review the steps before a run.</h2></div>
+      <ol class="omni-flow" aria-label="Workflow sequence">
+        <li><span>01</span><strong>Describe or record</strong><p>Describe the task or record browser steps.</p></li>
+        <li><span>02</span><strong>Review the draft</strong><p>Check what each step will do.</p></li>
+        <li><span>03</span><strong>Approve an action</strong><p>Permit this step once.</p></li>
+        <li><span>04</span><strong>Inspect the result</strong><p>Check what ran and what changed.</p></li>
+        <li><span>05</span><strong>Retain or schedule</strong><p>Save the workflow or set a schedule.</p></li>
+      </ol>
+      <p class="omni-note">Each stage has a separate review or retention decision.</p>
+      <div class="case-row omni-inner-row"><h3 class="case-label">Draft the task before running it.</h3><div class="case-prose"><p>The Codex sub-harness lets users draft coding tasks and choose a workspace and sandbox before a run. Connecting the runtime is a separate step from approving work.</p><p>Users can also draft a workflow from recorded clicks and targets. The recorder leaves out typed values; users supply them during review.</p></div></div>
+      <figure class="omni-screen"><a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/workflow.webp" target="_blank" rel="noopener" aria-label="Open the full workflow editor screenshot"><img src="../../assets/taska/workflow.webp" width="1165" height="1157" alt="Ordered workflow editor with a sample navigation-accessibility review, an illustrative workspace path and one Codex task step. No execution occurred." loading="eager"></a><figcaption><span>02 / Ordered editor</span> Actual UI with an illustrative, unsaved task and sample path. It has not run. An advanced editor is available for the step format.</figcaption></figure>
+    </section>
+
+    </details><details class="omni-disclosure case-depth" id="control"><summary><span class="depth-label">Inspect approval, recovery and memory<small>2 decisions · 1 screen</small></span><span aria-hidden="true">+</span></summary><section class="omni-chapter">
+      <div class="section-heading"><p class="eyebrow">02 / Control &amp; memory</p><h2>Separate access from action approval.</h2></div>
+      <div class="omni-decisions">
+        <article><span class="eyebrow">Scope</span><h3>Separate the access decisions.</h3><p>Browser origins, workspace access and native runtime connection each have a separate access boundary. The <a href="#research-decisions">approval model above</a> governs the action that follows.</p></article>
+        <article><span class="eyebrow">Recovery</span><h3>Save the recovery checkpoint first.</h3><p>The app stores recovery state before sending an action. That checkpoint supports the result check described in the research story.</p></article>
+      </div>
+      
+      <div class="case-row omni-inner-row"><h3 class="case-label">Separate recovery state from history.</h3><div class="case-prose"><p>My research distinguished page context, task state, session memory and an action log. The current implementation separates recovery storage from optional completed history. Recovery requires storing state before a task has finished.</p><p>Completed history is off by default. Users can turn it on or delete local records. Deleting local records does not remove copies held by Codex or the model provider. The sandbox limits writes and tool networking, not every filesystem read, so real work requires an appropriately isolated environment.</p></div></div>
+      <figure class="omni-screen"><a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/memory.webp" target="_blank" rel="noopener" aria-label="Open the memory controls screenshot"><img src="../../assets/taska/memory.webp" width="1165" height="758" alt="Memory controls with completed-history retention off, a local purge action and an explanation of separate provider histories. No retained completed history." loading="eager"></a><figcaption><span>04 / Memory &amp; retention</span> Actual installation-preview UI. Retention is off and the history is empty.</figcaption></figure>
+    </section>
+
+    </details><details class="omni-disclosure case-depth" id="system"><summary><span class="depth-label">Explore the design system and mobile view<small>Mobile view · Optional component library</small></span><span aria-hidden="true">+</span></summary><section class="omni-chapter">
+      <div class="section-heading"><p class="eyebrow">03 / Design system</p><h2>Components and<br>interaction states.</h2></div>
+      <div class="omni-system-layout">
+        <div><p class="omni-system-intro">Violet marks the primary action. Warning and error states use separate colors on the dark background.</p><ul class="omni-principles"><li><strong>Persistent labels</strong><span>Field names remain visible while editing.</span></li><li><strong>Keyboard feedback</strong><span>Visible focus, Escape-to-close dialogs and focus return.</span></li><li><strong>State continuity</strong><span>Selection and focus update before the animation finishes.</span></li><li><strong>Small screens</strong><span>Content stacks above a bottom navigation bar.</span></li></ul><p class="omni-note">Current UI checks cover representative interactions and measured CSS widths.</p></div>
+        <figure class="omni-mobile"><a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/mobile-dashboard.webp" target="_blank" rel="noopener" aria-label="Open the narrow-screen dashboard screenshot"><img src="../../assets/taska/mobile-dashboard.webp" width="390" height="844" alt="Narrow-screen Taska dashboard with zero runs, visible runtime-disconnected status and six navigation items at the bottom." loading="eager"></a><figcaption><span>05 / Narrow-screen dashboard</span> Build 2.1 snapshot. 390 px iframe, 375 px content width with scrollbar. Responsive CSS check, not device emulation. No actions have run.</figcaption></figure>
+      </div>
+      <details class="omni-disclosure"><summary>Inspect the implemented design-system library <span aria-hidden="true">+</span></summary><figure class="omni-screen"><a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/design-system.webp" target="_blank" rel="noopener" aria-label="Open the full design-system screenshot"><img src="../../assets/taska/design-system.webp" width="1165" height="1926" alt="Actual design-system library with twelve named color tokens, typography and spacing specifications, button variants, status badges, fields, a sample permission switch and dialog control." loading="eager"></a><figcaption><span>06 / Foundations &amp; components</span> Implemented library with labeled sample controls. Archived explorations are preserved separately.</figcaption></figure></details>
+      <div class="case-row omni-inner-row"><h3 class="case-label">Handle interrupted transitions.</h3><div class="case-prose"><p>Selection markers move between options. Reordered steps keep their identity. Closing a dialog returns focus immediately; its visual exit finishes separately. Reversing an action continues from the displayed state.</p><p>Try the tabs, screenshot viewer and expandable sections below.</p></div></div>
+      </section>
+</details><details class="omni-disclosure motion-reference" id="motion-reference"><summary>Try the portfolio motion reference <span aria-hidden="true">+</span></summary>
+        <p class="motion-purpose">Try the patterns used on this portfolio: clear selection, readable state changes and a return to your place after image inspection.</p><div class="gallery" data-tabs="portfolio-motion">
+          <div class="gallery-tabs" data-tablist aria-label="Portfolio motion examples"><a class="gallery-tab" data-tab href="#motion-selection">01 Selection</a><a class="gallery-tab" data-tab href="#motion-inspection">02 Inspection</a><a class="gallery-tab" data-tab href="#motion-layout">03 Expansion</a><span class="tab-rail" aria-hidden="true"></span></div>
+          <div class="gallery-panels">
+            <section class="gallery-panel motion-example" id="motion-selection" data-panel><h3>Move the tab marker.</h3><p>The marker makes the current selection clear while reading content stays still. Keyboard focus updates immediately. Switch tabs again to reverse the movement.</p></section>
+            <section class="gallery-panel motion-example" id="motion-inspection" data-panel><h3>Open a screenshot.</h3><p>Select any application screenshot to open its viewer. Closing returns you to the source image, with a brief focus cue so you can resume reading.</p></section>
+            <section class="gallery-panel motion-example" id="motion-layout" data-panel><h3>Resize an open section.</h3><p>This disclosure updates its content immediately. A brief summary cue and rotating indicator make the state change clear without clipping the reading surface.</p></section>
+          </div>
+          <details class="omni-disclosure motion-spec"><summary>Implementation timings <span aria-hidden="true">+</span></summary><p class="omni-note">Shared tokens: press 120 ms · feedback 180 ms · surface 260 ms · exit 160 ms · context 260 ms. Easing: cubic-bezier(.2,.8,.2,1).</p></details>
+        </div>
+      </details>
+      <details class="omni-disclosure"><summary>Inspect the implemented motion library <span aria-hidden="true">+</span></summary><figure class="omni-screen"><a data-zoom-focus-x="0.55" data-zoom-focus-y="0.4" href="../../assets/taska/motion-library.webp" target="_blank" rel="noopener" aria-label="Open the full motion-library screenshot"><img src="../../assets/taska/motion-library.webp" width="1165" height="2063" alt="Taska’s implemented motion library, with interactive selection, dialog, expansion, reorder, progress and status examples. These are isolated samples, not workflow execution." loading="eager"></a><figcaption><span>07 / Motion vocabulary</span> Actual implemented examples with labeled preview states. Recorded before the timing update. This still shows the controls; the live reference above uses the current timings.</figcaption></figure></details>
+    <nav class="case-next case-next-back" aria-label="Previous project"><p class="eyebrow">Previous project</p><a href="./pcx.html"><svg class="arrow-icon arrow-left" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg> PCx Career Path</a></nav>
+    <a class="back-to-work" href="./index.html#work">Back to selected work <svg class="arrow-icon arrow-up" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></a>
+  </main>
+  <footer class="recruiter-footer"><a href="../../assets/ricky-sanderson-resume.pdf">Résumé (PDF)</a><a href="mailto:rickymsanderson@gmail.com">rickymsanderson@gmail.com <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/ricky-sanderson-471749b3/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></footer>
+</div>
+<a class="case-section-return" href="#case-sections" hidden>Case sections <span aria-hidden="true">↑</span></a></body>
+</html>

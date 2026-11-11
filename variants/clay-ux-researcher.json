@@ -1,0 +1,193 @@
+{
+  "slug": "clay-ux-researcher",
+  "label": "Clay · Contract UX Researcher",
+  "title": "Ricky Sanderson | UX Research for Clay",
+  "discipline": "UX research & product design",
+  "headline": "Research that<br>guides decisions.",
+  "intro": "I connect interviews, observation and information architecture to decisions teams can use.",
+  "focus": "Interviews · Observation · Card sorting · Stakeholder collaboration",
+  "featured": {
+    "project": "Crossroads Education",
+    "headline": "When check-in became a staff workflow.",
+    "summary": "At Crossroads Education, observation and stakeholder interviews helped our team move attendance from individual student check-in to a staff-led bulk sign-in flow.",
+    "role": "Junior UX designer · Team project",
+    "link": "crossroads.html"
+  },
+  "methods": [
+    {
+      "title": "Listen and observe",
+      "copy": "Interviews and observation surfaced the practical barriers to student check-in.",
+      "link": "crossroads.html#research-summary"
+    },
+    {
+      "title": "Make sense of the work",
+      "copy": "Card sorting, personas and user flows helped the team review information architecture before screens.",
+      "link": "crossroads.html#structure"
+    },
+    {
+      "title": "Keep stakeholders involved",
+      "copy": "Weekly meetings with Learning Center Directors kept everyday issues and feedback in the design process.",
+      "link": "crossroads.html#feedback"
+    }
+  ],
+  "supporting": [
+    {
+      "name": "PCx Career Path",
+      "type": "Requirements synthesis",
+      "copy": "Reconciling conflicting requirements into a proposed career path and daily-task prototype.",
+      "scope": "Frontend prototype · Mock data · No backend",
+      "image": "pcx-prototype-home.webp",
+      "width": 1165,
+      "height": 747,
+      "alt": "Original PCx frontend prototype showing an agent’s ranked daily tasks and career stage. Mock data; no backend.",
+      "link": "pcx.html",
+      "inspect": {
+        "title": "Inspect prototype scope",
+        "copy": "Design and prototyping · AI-assisted HTML, CSS and JavaScript · Mock data, no backend. The case explains which mechanisms are proposals and which come from the founder’s direction.",
+        "link": "pcx.html",
+        "link_text": "Read the decision story"
+      }
+    },
+    {
+      "name": "Taska",
+      "type": "Research to interaction design",
+      "copy": "Turning browser-assistant research and specifications into review, approval and recovery decisions.",
+      "scope": "Independent project · Installation preview",
+      "image": "taska-command.webp",
+      "width": 1165,
+      "height": 963,
+      "alt": "Taska command screen in an installation preview. The runtime is not connected.",
+      "link": "taska.html",
+      "inspect": {
+        "title": "Inspect the motion reference",
+        "copy": "Static screenshot of the implemented motion library. Controls shown here belong to the artifact; the case includes a live portfolio motion reference.",
+        "image": "taska-motion-library.webp",
+        "alt": "Taska motion-library screenshot with isolated interaction state examples. This image is not a live control.",
+        "link": "taska.html#motion-reference",
+        "link_text": "Try the live motion reference"
+      }
+    }
+  ],
+  "case_overrides": {
+    "crossroads": [
+      [
+        "Check-in and<br>staff attendance",
+        "A staff-led<br>attendance flow"
+      ],
+      [
+        "A team redesign of attendance in Element, a Crossroads Education learning-center platform.",
+        "Observation and stakeholder interviews helped our team rethink attendance in Element, a learning-center platform."
+      ],
+      [
+        "<nav class=\"case-shortcuts\" aria-label=\"Interaction examples\"><a href=\"#modernized-interfaces\">Watch the MAC &amp; Element flows <span aria-hidden=\"true\">↓</span></a></nav>",
+        "<nav class=\"case-shortcuts\" aria-label=\"Research case sections\"><a href=\"#research-summary\">Research &amp; decision ↓</a><a href=\"#structure\">Methods &amp; IA ↓</a><a href=\"#gallery-title\">Original research artifacts ↓</a><a href=\"#modernized-interfaces\">Explore the interfaces ↓</a></nav>"
+      ],
+      [
+        "<section class=\"case-row\" id=\"mac-check-in\">",
+        "<section class=\"case-row\" id=\"research-summary\"><h2 class=\"case-label\">Connect the finding to the decision.</h2><div class=\"case-prose\"><dl class=\"research-chain\"><div><dt>Observed</dt><dd>Some children could not spell their names or recall their student IDs. The director was already signing students in individually.</dd></div><div><dt>Constraint</dt><dd>Student information could not be openly exposed, and school network/API access was not available to the team.</dd></div><div><dt>Team decision</dt><dd>Move attendance to a separate director screen with bulk sign-in.</dd></div><div><dt>Feedback</dt><dd>Staff responded positively. The documented outcome is qualitative; no measured time savings are claimed.</dd></div></dl></div></section><section class=\"case-row\" id=\"mac-check-in\">"
+      ],
+      [
+        "<h2 class=\"case-label\">Prototype and test state changes.</h2>",
+        "<h2 class=\"case-label\">Check the interaction states.</h2>"
+      ],
+      [
+        "I also worked on transitions between UI states and used Cypress to test the actions available in each state.",
+        "I also worked on transitions between UI states and used Cypress to test the actions available in each state. These were UI checks, separate from research with participants."
+      ],
+      [
+        "<p>I used open, closed and hybrid card sorting, personas and user flows to review information architecture with the team before developing screens.</p>",
+        "<p>I used open, closed and hybrid card sorting, personas and user flows to review information architecture with the team before developing screens.</p><p class=\"artifact-reading\">The task-grouping photo and schedule sketch show the team organizing staff information, hours and scheduling. They document the design process, rather than a measured usability result.</p>"
+      ],
+      [
+        "<figcaption>Scheduling-interface sketch <span aria-hidden=\"true\">·</span> Crossroads Education<br>Original team sketch of the schedule grid and supporting controls.<br>",
+        "<div class=\"sketch-reading\" aria-label=\"Present-day reading of the original sketch\"><div><span>01 / Demand</span><p>Typical student demand arranged by time.</p></div><div><span>02 / Staff constraints</span><p>Minimum, maximum and preferred hours, with notes.</p></div><div><span>03 / Existing coverage</span><p>A separate time strip for hours already scheduled.</p></div></div><p class=\"annotation-note\">Present-day annotation of the visible labels in the original team sketch. This explains the artifact; it is not an additional research finding.</p><figcaption>Scheduling-interface sketch <span aria-hidden=\"true\">·</span> Crossroads Education<br>Original team sketch, shown in a detail view. Select the image for the full photograph.<br>"
+      ],
+      [
+        "                    <figcaption>Original task grouping <span aria-hidden=\"true\">·</span> Crossroads Education<br>Tasks for staff information, hours and scheduling, grouped during the workshop.<br><a class=\"fullsize-image-link\" href=\"../assets/crossroads-task-groups-2018.webp\" target=\"_blank\" rel=\"noopener noreferrer\">View the full-size task grouping</a></figcaption>",
+        "                    <figcaption>Original task grouping <span aria-hidden=\"true\">·</span> Crossroads Education<br>Tasks for staff information, hours and scheduling, grouped during the workshop.<br><a class=\"fullsize-image-link\" href=\"../assets/crossroads-task-groups-2018.webp\" target=\"_blank\" rel=\"noopener noreferrer\">View the full-size task grouping</a></figcaption><div class=\"artifact-transcription\"><p class=\"artifact-eyebrow\">Reading the original notes</p><h3>Everyday staff tasks, made visible.</h3><dl><div><dt>Staff information</dt><dd>“View someone’s contact info”</dd></div><div><dt>Hours worked</dt><dd>“View workers hours worked”</dd></div><div><dt>Scheduling</dt><dd>“Edit workers availability”</dd></div></dl><p class=\"annotation-note\">Selected transcription of visible notes. These labels explain the artifact; they are not additional study findings.</p></div>"
+      ],
+      [
+        "From the Nexus working notes <span aria-hidden=\"true\">·</span> Selected transcription",
+        "Nexus working notes, 2018 <span aria-hidden=\"true\">·</span> Selected transcription"
+      ],
+      [
+        "<p class=\"gallery-note\">Selected definitions from the original outline. Capitalization preserved.</p>",
+        "<p class=\"gallery-note source-access\">Source access: selected transcription only. The original export is not included in this portfolio. Capitalization is preserved.</p>"
+      ]
+    ],
+    "taska": [
+      [
+        "The marker moves to the selected tab in 380 ms. The panel enters in 460 ms, with no delay before keyboard focus or selection changes. Switch tabs again before it finishes to reverse the movement.",
+        "The marker makes the current selection clear while reading content stays still. Keyboard focus updates immediately. Switch tabs again to reverse the movement."
+      ],
+      [
+        "It opens in 380 ms and exits in 220 ms. Escape returns focus immediately. Reopening during the exit continues from its current position.",
+        "Closing returns you to the source image, with a brief focus cue so you can resume reading."
+      ],
+      [
+        "This disclosure changes its open state immediately, then adjusts its height over 380 ms. Reverse it before it finishes: the next transition starts at the current height.",
+        "This disclosure updates its content immediately. A brief summary cue and rotating indicator make the state change clear without clipping the reading surface."
+      ],
+      [
+        "press 120 ms · feedback 220 ms · surface 380 ms · exit 220 ms · context 460 ms",
+        "press 120 ms · feedback 180 ms · surface 260 ms · exit 160 ms · context 260 ms"
+      ],
+      [
+        "      <div class=\"case-prose\">\n        <p class=\"lead-paragraph\">A request like “review this project” leaves the person delegating it with unanswered questions: what can the assistant access, which steps will it take, and when will it stop?</p>\n        <p>I designed the review around those decisions. Users inspect a draft before a run, approve consequential actions individually, and check an interrupted action’s result before retrying.</p>\n        <p>This is an independent project based on my browser-assistant research and specifications. The application screens below show an installation preview, not a connected runtime.</p>\n      </div>",
+        "      <div class=\"case-prose taska-framing\"><div><span class=\"framing-label\">The question</span><p>What can the assistant access, which steps will it take, and when will it stop?</p></div><div><span class=\"framing-label\">My design response</span><p>Review a draft before a run. Approve consequential actions individually. Check an interrupted action’s result before retrying.</p></div><p class=\"framing-scope\">Independent browser-assistant research and specifications. Screens show an installation preview, not a connected runtime.</p></div>"
+      ],
+      [
+        "      <figure class=\"omni-screen\"><a href=\"../assets/taska/interaction-states.webp\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open the interaction-state library screenshot\"><img src=\"../assets/taska/interaction-states.webp\" width=\"1165\" height=\"874\" alt=\"Taska’s interaction-state library describes draft, awaiting approval, executing, awaiting result review, uncertain outcome and completed states.\" loading=\"lazy\"></a><figcaption><span>03 / Interaction-state library</span> Recovery and review are part of the same design system as buttons and fields.</figcaption></figure>",
+        "      <figure class=\"case-feature-figure editorial-detail\" id=\"recovery-detail\"><div class=\"decision-artifact\"><div class=\"decision-artifact-copy\"><p class=\"artifact-eyebrow\">From research to an interaction rule</p><h3>Inspect the result<br>before retrying.</h3><p class=\"source-quote\">“An interrupted write is blocked from replay. Inspect the target and reconcile observed evidence.”</p><p class=\"quote-source\">Visible rule in the interaction-state library.</p></div><a class=\"screenshot-link recovery-detail-window\" data-screenshot data-zoom-focus-x=\"0.31\" data-zoom-focus-y=\"0.74\" data-viewer-caption=\"Taska interaction-state library. Actual installation-preview UI; runtime not connected. Full screenshot.\" href=\"../assets/taska/interaction-states.webp\" aria-label=\"Inspect the complete interaction-state library\"><img src=\"../assets/taska/interaction-states.webp\" width=\"1165\" height=\"874\" alt=\"Taska’s Uncertain outcome state says an interrupted write is blocked from replay until the target is inspected and observed evidence reconciled.\" loading=\"eager\"></a></div><figcaption>03 / Interaction-state library · Original installation-preview UI. This detail shows the recovery rule; select it to inspect all states. Runtime not connected.</figcaption></figure>"
+      ],
+      [
+        "The original pseudocode tracked completion but left cancellation, recovery and replay unresolved.",
+        "The original plan tracked completion, but did not settle what happens when work is canceled, interrupted or tried again."
+      ],
+      [
+        "Show uncertain outcomes, block interrupted writes from replaying, and ask for evidence before continuing.",
+        "Show when the result is uncertain. Check whether a change happened before sending the same action again."
+      ],
+      [
+        "Repairs addressed cancellation races, stale approvals and possible duplicate dispatch.",
+        "Fixes addressed competing cancellation events, approval of outdated drafts and the risk of sending an action twice."
+      ],
+      [
+        "This is intended to prevent the same write from being sent twice.</p>",
+        "This is intended to prevent the same change from being sent twice.</p><p class=\"plain-language-example\"><strong>For example:</strong> a connection drops just after an assistant submits a change. Did it go through? Check the result before trying again, so the change is not sent twice.</p>"
+      ],
+      [
+        "<h3>Approve the specific action.</h3><p>Browser origins, workspace access and native runtime connection are separate concerns. Consequential steps require one-time approval tied to the workflow revision and action.</p>",
+        "<h3>Separate the access decisions.</h3><p>Browser origins, workspace access and native runtime connection each have a separate access boundary. The <a href=\"#research-decisions\">approval model above</a> governs the action that follows.</p>"
+      ],
+      [
+        "<h3>Check interrupted actions before retrying.</h3><p>The app saves a recovery checkpoint before sending an action. If an interruption leaves the outcome unclear, it blocks another attempt until the result is checked.</p>",
+        "<h3>Save the recovery checkpoint first.</h3><p>The app stores recovery state before sending an action. That checkpoint supports the result check described in the research story.</p>"
+      ],
+      [
+        "Taska ties each consequential approval to a specific step and workflow revision.",
+        "Taska ties each one-time approval to a specific step and workflow revision."
+      ]
+    ],
+    "pcx": [
+      [
+        "<p>The brief used different stage names and completion rules in different places. It also treated “Productive Agent” as both a career stage and a production level.</p>",
+        "<div class=\"requirements-map\" aria-label=\"Requirements synthesis\"><div><span>Conflicting language</span><strong>“Productive Agent”</strong><p>Used as both a career stage and a production level.</p></div><div><span>Source rule</span><strong>Latest dated direction</strong><p>Use the founder’s latest direction; keep unresolved decisions open.</p></div><div><span>Proposed path</span><ol><li>Getting Set Up</li><li>Fundamentals</li><li>Mastery Skills</li><li>Wealth Building</li></ol></div></div><p class=\"evidence-boundary\">Case-study summary of the documented requirements, not an original research artifact.</p><details class=\"omni-disclosure\"><summary>Read the requirements decision <span aria-hidden=\"true\">+</span></summary><div class=\"research-scope\"><p>The brief used different stage names and completion rules in different places. It also treated “Productive Agent” as both a career stage and a production level.</p>"
+      ],
+      [
+        "Questions that still required the founder’s decision stayed open; mechanisms not specified in the sources stayed labeled as proposals.</p>",
+        "Questions that still required the founder’s decision stayed open; mechanisms not specified in the sources stayed labeled as proposals.</p></div></details>"
+      ],
+      [
+        "        <section class=\"case-row case-gallery-row\" aria-labelledby=\"gallery-title\">",
+        "        <figure class=\"case-feature-figure editorial-detail\" id=\"ranking-detail\"><div class=\"decision-artifact\"><div class=\"decision-artifact-copy\"><p class=\"artifact-eyebrow\">The rule in the prototype</p><h3>Due work comes first.</h3><ol class=\"priority-reading\"><li><span>01 / Overdue</span><strong>Medium-priority task</strong></li><li><span>02 / Due today</span><strong>High-priority work</strong></li></ol><p>“Why is this first?” makes the ranking explainable beside the recommended task.</p></div><a class=\"screenshot-link pcx-detail-window\" data-screenshot data-zoom-focus-x=\"0.47\" data-zoom-focus-y=\"0.31\" data-viewer-caption=\"PCx agent-day prototype. Original screenshot with mock data; no backend.\" href=\"../assets/pcx-prototype-home.webp\" aria-label=\"Inspect the full PCx agent-day prototype\"><img src=\"../assets/pcx-prototype-home.webp\" width=\"1165\" height=\"747\" alt=\"Original PCx task recommendation: Update CRM pipeline stages, due yesterday, medium priority, with a Why is this first link.\" loading=\"eager\"></a></div><figcaption>Prototype detail · Mock data; no backend. Ranking labels annotate the shown rule. Select to inspect the full screen.</figcaption></figure>\n\n        <section class=\"case-row case-gallery-row\" aria-labelledby=\"gallery-title\">"
+      ]
+    ]
+  },
+  "theme": "clay",
+  "case_timing": {
+    "crossroads": "Role dates: 2017–2020 · Case-study duration not specified.",
+    "pcx": "Public work sample: 2026 · Project duration not specified.",
+    "taska": "Project dates and duration are not listed."
+  }
+}
