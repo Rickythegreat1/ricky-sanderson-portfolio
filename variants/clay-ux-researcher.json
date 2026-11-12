@@ -4,12 +4,12 @@
   "title": "Ricky Sanderson | UX Research for Clay",
   "discipline": "UX research & product design",
   "headline": "Research that<br>guides decisions.",
-  "intro": "I connect interviews, observation and information architecture to decisions teams can use.",
+  "intro": "I turn survey analysis, interviews and information architecture into clear product decisions.",
   "focus": "Interviews · Observation · Card sorting · Stakeholder collaboration",
   "featured": {
     "project": "Crossroads Education",
-    "headline": "When check-in became a staff workflow.",
-    "summary": "Observation and stakeholder interviews led our team to move attendance from individual student check-in to a staff-led flow. Original task-grouping notes and scheduling sketches show the wider team process.",
+    "headline": "From research to learning tools.",
+    "summary": "At Crossroads, I analyzed survey responses, coded feedback and synthesized internal interviews. The case connects the evidence to product recommendations and team design decisions.",
     "role": "Junior UX designer · Team project",
     "link": "crossroads.html"
   },
@@ -72,15 +72,15 @@
     "crossroads": [
       [
         "Check-in and<br>staff attendance",
-        "A staff-led<br>attendance flow"
+        "Research for<br>learning tools"
       ],
       [
         "A team redesign of attendance in Element, a Crossroads Education learning-center platform.",
-        "Observation and stakeholder interviews helped our team rethink attendance in Element, a learning-center platform."
+        "Survey analysis, internal interviews and task scenarios informed my work on Nexus and Element at Crossroads Education."
       ],
       [
         "<nav class=\"case-shortcuts\" aria-label=\"Interaction examples\"><a href=\"#modernized-interfaces\">Watch the MAC &amp; Element flows <span aria-hidden=\"true\">↓</span></a></nav>",
-        "<nav class=\"case-shortcuts\" aria-label=\"Research case sections\"><a href=\"#research-summary\">Research &amp; decision ↓</a><a href=\"#structure\">Methods &amp; IA ↓</a><a href=\"#gallery-title\">Original research artifacts ↓</a><a href=\"#modernized-interfaces\">Explore the interfaces ↓</a></nav>"
+        "<nav class=\"case-shortcuts\" aria-label=\"Research case sections\"><a href=\"#research-evidence\">Survey analysis ↓</a><a href=\"#nexus-insight\">Interview synthesis ↓</a><a href=\"#research-summary\">Attendance decision ↓</a><a href=\"#gallery-title\">Original artifacts ↓</a><a href=\"#modernized-interfaces\">Interactive demos ↓</a></nav>"
       ],
       [
         "<section class=\"case-row\" id=\"mac-check-in\">",
@@ -186,7 +186,7 @@
   },
   "theme": "clay",
   "case_timing": {
-    "crossroads": "Role dates: 2017–2020 · Case-study duration not specified.",
+    "crossroads": "Role: 2017–2020 · Selected research records: July–December 2018.",
     "pcx": "Public work sample: 2026 · Project duration not specified.",
     "taska": "Project dates and duration are not listed."
   }

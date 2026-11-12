@@ -35,7 +35,7 @@ def decision_preview(name, home=False):
 
 def version_assets(markup):
     """Keep returning visitors on matching edition CSS/JS after a Pages update."""
-    for asset in ('clay.css','clay.js','clay-case.js'):
+    for asset in ('clay.css','clay.js','clay-case.js','clay-demo.css'):
         stamp=hashlib.sha256((ROOT/'versions'/asset).read_bytes()).hexdigest()[:12]
         markup=markup.replace('/'+asset+'"','/'+asset+'?v='+stamp+'"')
     return markup
@@ -235,6 +235,27 @@ def build(config):
                 marker='<div class="case-pagination">' if name=='pcx' else '<nav class="case-next case-next-back"'
                 at=source.index(marker)
                 source=source[:at]+'<aside class="open-research-question"><p>Open research question</p><h2>'+question+'</h2><span>This is a question for future validation, not a study result.</span></aside>'+source[at:]
+        if name == 'crossroads' and d.get('theme') == 'clay':
+            research=(ROOT/'templates/clay-research.html').read_text()
+            source=source.replace('<section class="case-row" id="research-summary">',research+'<section class="case-row" id="research-summary">',1)
+            source=source.replace('Connect the finding to the decision.','03 / Element: a staff-led attendance flow.')
+            source=source.replace('Team research contribution · Qualitative staff feedback.','Service-survey analysis · Interview synthesis · Task protocol · Measurement planning')
+            source=source.replace('<div><dt>Product</dt><dd>Element</dd></div>','<div><dt>Products</dt><dd>Nexus &amp; Element</dd></div>')
+            source=source.replace('I worked with the lead UX designer and CTO across Element and Nexus. My contribution covered interviews, research, UI-system work and interaction design. I maintained the Adobe XD design library and used UI testing scripts; I did not implement the application code.','I analyzed service-survey responses, coded feedback, synthesized internal interviews and developed task scenarios. I worked with the lead UX designer and CTO across Nexus and Element, maintained the Adobe XD design library and used UI-state testing scripts. I did not implement the application code.')
+            source=source.replace('Study plans, recruiting materials, participant counts and analysis outputs are not included. The result reported here is qualitative staff feedback, not a measured outcome.','The research records include survey analysis, coded feedback, internal interview synthesis, task scenarios and proposed metrics. They do not establish a recruitment funnel, complete study-wide sample or measured product impact. The attendance outcome reported here is qualitative staff feedback.')
+            source=source.replace('Ricky Sanderson’s work on student check-in, staff attendance and tutoring search at Crossroads Education.','Ricky Sanderson’s survey analysis, interview synthesis and research-informed design work at Crossroads Education.')
+            # Put the case's documented scope beside the contribution, rather than
+            # leaving it after one of several separate research threads.
+            scope=re.search(r'<details class="omni-disclosure research-context"><summary>Research scope and evidence.*?</details>',source,re.S)
+            if scope:
+                source=source[:scope.start()]+source[scope.end():]
+                source=source.replace('<section class="case-row case-intro"',scope.group(0)+'<section class="case-row case-intro"',1)
+            source=source.replace('An original interaction study showing a search of the tutoring knowledge base.','An original interaction study showing search within the tutoring knowledge base. Its chronology relative to the table-first recommendation is not documented; it is not evidence that the recommendation shipped.')
+            source=source.replace('Proposed tutor flow, condensed from the working notes.','A separate proposal from the working notes. Its chronology relative to the interview recommendation is not established.')
+            source=source.replace('<p class="scope-brief">Service-survey analysis · Interview synthesis · Task protocol · Measurement planning</p>','')
+            source=re.sub(r'(<nav class="case-shortcuts case-contents"[^>]*>).*?</nav>',lambda m:m[1].replace('case-contents"','case-contents case-workstreams"')+'<span class="case-contents-label">Three distinct research workstreams</span>\n<div class="workstream-links">\n  <a href="#research-evidence"><strong>MAC / MAC Stat</strong><span>Survey responses → coded service needs</span><small>Analysis example <i aria-hidden="true">↗</i></small></a>\n  <a href="#nexus-insight"><strong>Nexus</strong><span>Interview synthesis → table-first entry</span><small>Documented recommendation <i aria-hidden="true">↗</i></small></a>\n  <a href="#research-summary"><strong>Element</strong><span>Observation + constraints → staff-led attendance</span><small>Team design decision <i aria-hidden="true">↗</i></small></a>\n</div>\n<div class="case-sublinks"><a href="#research-process">Task protocol &amp; metrics ↓</a><a href="#gallery-title">Original artifacts ↓</a><a href="#modernized-interfaces">Interactive demos ↓</a></div>\n'+'</nav>',source,count=1,flags=re.S)
+
+
         (out/f'{name}.html').write_text(version_assets(source))
     (out/'concepts').mkdir(exist_ok=True)
     for name in ['attendance','mac-checkin']:
@@ -243,7 +264,9 @@ def build(config):
         source = source.replace('../assets/','../../../assets/')
         for resource in ['ui.css','state.js','app.js']:
             source = source.replace('./'+resource,'../../../concepts/'+resource)
-        (out/'concepts'/f'{name}.html').write_text(source)
+        if d.get('theme') == 'clay' and name == 'attendance':
+            source=source.replace('</head>','<link rel="stylesheet" href="../../clay-demo.css"></head>')
+        (out/'concepts'/f'{name}.html').write_text(version_assets(source))
     print(f'Built versions/{slug}/index.html')
     return d
 

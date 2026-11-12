@@ -1,0 +1,10 @@
+/* Role-edition demo correction. The original general-portfolio demo is unchanged. */
+@media(max-width:450px){
+ body[data-app="staff"] .staff-heading{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}
+ body[data-app="staff"] .staff-heading>.button{width:100%;max-width:100%;justify-content:space-between;white-space:normal;}
+}
+
+/* Keep the confirmation sheet's scroll separate from the roster behind it. */
+html:has(body[data-app="staff"]){scrollbar-gutter:stable;}
+html:has(body[data-app="staff"] dialog[open]){overflow:hidden;}
+body[data-app="staff"] dialog{overscroll-behavior:contain;}
