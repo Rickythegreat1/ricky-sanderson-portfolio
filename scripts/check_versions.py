@@ -23,6 +23,20 @@ class Doc(HTMLParser):
         a=dict(attrs)
         if 'id' in a: self.ids.append(a['id'])
         self.refs.extend(a[k] for k in ['href','src','poster'] if k in a)
+class ViewerSources(HTMLParser):
+    def __init__(self,text):
+        super().__init__(); self.active=None; self.errors=[]; self.feed(text)
+    def handle_starttag(self,tag,attrs):
+        a=dict(attrs)
+        if tag=='a' and 'data-screenshot' in a: self.active={'attrs':a,'image':False}
+        if tag=='img' and self.active is not None: self.active['image']=True
+    def handle_endtag(self,tag):
+        if tag=='a' and self.active is not None:
+            a=self.active['attrs']
+            if not self.active['image'] and not (a.get('data-source-width') and a.get('data-source-alt')):
+                self.errors.append(a.get('href'))
+            self.active=None
+
 def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 baseline=[ROOT/'index.html',*(ROOT/'work').glob('*'),ROOT/'styles.css',ROOT/'script.js',ROOT/'case.js',ROOT/'case-base.css',ROOT/'case-theme.css']
 before={p:digest(p) for p in baseline if p.is_file()}
@@ -35,6 +49,8 @@ errors=[]
 for p in pages:
     d=Doc(p.read_text())
     if p.is_relative_to(ROOT/'versions'):
+        viewer=ViewerSources(p.read_text())
+        if viewer.errors: errors.append((str(p),'viewer source missing image metadata',viewer.errors))
         nesting=Nest(p.read_text())
         if nesting.errors or nesting.stack: errors.append((str(p),'unbalanced generated markup',nesting.errors,nesting.stack))
     if len(d.ids)!=len(set(d.ids)): errors.append((str(p),'duplicate IDs'))

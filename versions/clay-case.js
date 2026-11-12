@@ -146,9 +146,9 @@
       event.preventDefault();opener=link;
       const from=departing?{opacity:1,transform:getComputedStyle(departing).transform}:{opacity:1,transform:'translateY(12px) scale(.99)'};
       ++exitGeneration;departing?.remove();departing=null;
-      originalWidth=Number(link.querySelector('img').getAttribute('width'))||link.querySelector('img').naturalWidth;
-      picture.src=link.href;picture.alt=link.querySelector('img').alt;caption.textContent=link.dataset.viewerCaption||(link.closest('figure').querySelector('figcaption')?.innerText||'').replace(/\s+/g,' ').trim();
-      dialog.querySelector('.viewer-original').href=link.href;applyZoom('fit');
+      const thumbnail=link.querySelector('img');originalWidth=Number(link.dataset.sourceWidth||thumbnail?.getAttribute('width'))||thumbnail?.naturalWidth||0;
+      picture.src=link.href;picture.alt=link.dataset.sourceAlt||link.querySelector('img')?.alt||'Source image';caption.textContent=link.dataset.viewerCaption||(link.closest('figure').querySelector('figcaption')?.innerText||'').replace(/\s+/g,' ').trim();
+      dialog.querySelector('.viewer-original').href=link.href;applyZoom(link.dataset.viewerStart||'fit');
       dialog.showModal();document.body.classList.add('viewer-open');closeButton.focus();
       animate(dialog,from,{opacity:1,transform:'translateY(0) scale(1)'},'dialog');
     }));

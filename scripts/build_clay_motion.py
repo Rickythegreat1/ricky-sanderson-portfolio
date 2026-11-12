@@ -39,6 +39,10 @@ replace("zoomButtons.forEach(button=>button.addEventListener('click',()=>applyZo
 replace('Open original <span aria-hidden="true">↗</span>', 'Original <span aria-hidden="true">↗</span>')
 replace('Choose 100% or 200%, then scroll to pan. Arrow keys work in the image area.', 'Zoom, then scroll or use arrow keys to pan.')
 replace("caption.textContent=(link.closest('figure').querySelector('figcaption')?.innerText||'').replace(/\\s+/g,' ').trim();", "caption.textContent=link.dataset.viewerCaption||(link.closest('figure').querySelector('figcaption')?.innerText||'').replace(/\\s+/g,' ').trim();")
+# Editorial diagrams can open their source without embedding a duplicate bitmap.
+replace("originalWidth=Number(link.querySelector('img').getAttribute('width'))||link.querySelector('img').naturalWidth;", "const thumbnail=link.querySelector('img');originalWidth=Number(link.dataset.sourceWidth||thumbnail?.getAttribute('width'))||thumbnail?.naturalWidth||0;")
+replace("picture.src=link.href;picture.alt=link.querySelector('img').alt;", "picture.src=link.href;picture.alt=link.dataset.sourceAlt||link.querySelector('img')?.alt||'Source image';")
 replace("const after=details.getBoundingClientRect().height;\n      details.style.overflow='clip';\n      animate(details,{height:`${before}px`},{height:`${after}px`},'dialog').then(()=>{if(current===generation){details.style.height='';details.style.overflow='';}});", "details.style.overflow='';\n      animate(summary,{backgroundColor:'#f0f0f2'},{backgroundColor:'transparent'},'feedback');")
+replace("dialog.querySelector('.viewer-original').href=link.href;applyZoom('fit');", "dialog.querySelector('.viewer-original').href=link.href;applyZoom(link.dataset.viewerStart||'fit');")
 (ROOT/'versions/clay-case.js').write_text(s)
 print('Built versions/clay-case.js')
