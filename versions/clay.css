@@ -815,5 +815,4 @@ html:has(body.role-case) { scroll-behavior:auto; }
  .role-case .compact-workflow p { grid-column:2; margin:0; font-size:14px; }
  .role-case .path-builder-focus { position:relative; aspect-ratio:178/180; overflow:hidden; background:#fafafa; border:1px solid #dedee1; }
  .role-case .path-builder-focus img { position:absolute; width:404.495%; max-width:none; height:auto; left:-296.63%; top:-48.889%; }
- .role-case .path-builder-focus:hover img { transform:none; }
 }
